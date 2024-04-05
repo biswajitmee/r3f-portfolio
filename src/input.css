@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {}
+
+
+@layer utilities {
+
+
+  .menuIcon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    right: 25px;
+    top: 25px;
+    z-index: 9999;
+    cursor: pointer;
+
+  }
+
+  .navBackground {
+    display: none;
+    position: absolute;
+    z-index: 999;
+  }
+
+  .navBackground { 
+    position: absolute;
+  }
+
+  .navBackground.show {
+    display: block;
+  }
+
+
+  .navCanvas {
+    position: relative; 
+    color: azure;
+  
+    width: 30vw; 
+    left: 30vw;
+    
+  }
+
+
+ 
+  .canvas{ 
+    height: 100vh; 
+    width: 100vw; 
+    position: absolute;
+    
+  }
+
+.nav-item{ cursor: pointer;}
+}
