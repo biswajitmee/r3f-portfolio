@@ -1144,10 +1144,10 @@
   resolved "https://registry.npmjs.org/@babylonjs/loaders/-/loaders-7.0.0.tgz"
   integrity sha512-Stpi8wZJnFCaU0jS9D83Oto9PmsjA+gT+47vDjIT0F9DeOkf9t3uklGATBsFcqiGxbQ63BWrBq3b04hSO58Ltw==
 
-"@esbuild/darwin-arm64@0.16.17":
+"@esbuild/win32-x64@0.16.17":
   version "0.16.17"
-  resolved "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.16.17.tgz"
-  integrity sha512-/2agbUEfmxWHi9ARTX6OQ/KgXnOWfsNlTeLcoV7HSuSTv63E4DqtAc+2XqGw1KHxKMHGZgbVCZge7HXWX9Vn+w==
+  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz"
+  integrity sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==
 
 "@floating-ui/core@^1.0.0":
   version "1.6.0"
@@ -2395,6 +2395,11 @@ babylonjs-hook@^0.1.1:
   resolved "https://registry.npmjs.org/babylonjs-hook/-/babylonjs-hook-0.1.1.tgz"
   integrity sha512-uLcaX08NJy/1DeI+3GNQWQ2lQazhCR4U4jC6V+xy9rEvCCeFml3EWlwEwZv+8+oSHnMMV761jeQGjn9dVzgfMQ==
 
+babylonjs@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.npmjs.org/babylonjs/-/babylonjs-7.1.0.tgz"
+  integrity sha512-/7RmZO3GYvfba7znIuniCSrTucIExsiE+ulT52bkqVU7BKzhG3mk1WylkxCD8ks9zqcepYsJLKUOh7ohtoJYPA==
+
 balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
@@ -3351,11 +3356,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fsevents@^2.3.2, fsevents@~2.3.2:
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.1:
   version "1.1.1"

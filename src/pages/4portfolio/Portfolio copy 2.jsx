@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import * as BABYLON from 'babylonjs';
+import studio from "@theatre/studio";
+import extension from "@theatre/r3f/dist/extension";
+
 
 const Portfolio = () => {
   const canvasRef = useRef(null);
@@ -13,18 +16,18 @@ const Portfolio = () => {
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 0, -6), scene);
 
     camera.rotation.x = 0;
-    camera.rotation.y = 1.75;
+    camera.rotation.y = 1.7;
     camera.rotation.z = 0;
 
-    camera.position.z = 0.9;
-    camera.position.x = -1.9;
+    camera.position.z = 0.5;
+    camera.position.x = -1.2;
     camera.position.y = 0;
 
     camera.attachControl(canvas, true);
 
     const imagePlanes = [];
     const numImages = 6;
-    const shapeRadius = 3.1;
+    const shapeRadius = 3;
 
     const createImagePlane = (imageUrl, angle) => {
       const plane = BABYLON.MeshBuilder.CreatePlane("imagePlane", { width: 6, height: 3 }, scene);
@@ -66,16 +69,34 @@ const Portfolio = () => {
       }
     `;
 
-    // Create the post-process
-    const postProcess = new BABYLON.PostProcess("Squeeze", "squeeze", [], ["textureSampler"], 5.2, camera);
+    const initializeStudio = async () => {
+      try {
+        const theatre = await studio.initialize();
+        if (theatre && typeof theatre.extend === 'function') {
+          theatre.extend(extension);
+          console.log('Theatre.js Studio initialized successfully.');
+        } else {
+          console.error('Theatre.js Studio initialization failed or returned an invalid object.');
+        }
+      } catch (error) {
+        console.error('Error initializing Theatre.js Studio:', error);
+      }
+    };
+    
+    initializeStudio();
+    
+    
+    
 
+
+    const postProcess = new BABYLON.PostProcess("Squeeze", "squeeze", [], ["textureSampler"], 3.0, camera);
     // Smooth scrolling variables
     let targetScrollPosition = 0;
     let currentScrollPosition = 0;
-    const scrollSmoothingFactor = 0.05;
+    const scrollSmoothingFactor = 0.1;
 
     window.addEventListener("wheel", function (e) {
-      targetScrollPosition += e.deltaY * 0.001;
+      targetScrollPosition += e.deltaY * 0.002;
     });
 
     const animate = () => {
@@ -84,7 +105,7 @@ const Portfolio = () => {
 
       for (let i = 0; i < numImages; i++) {
         const plane = imagePlanes[i];
-        const radius = 4.5;
+        const radius = 3.5;
 
         const position = new BABYLON.Vector3(
           radius * Math.cos(currentScrollPosition + i * Math.PI * 2 / numImages),

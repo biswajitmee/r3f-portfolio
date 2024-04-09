@@ -18,7 +18,7 @@ export function QuantamCube(props) {
     animationAction.play();
 
     const animate = () => {
-      mixer.update(0.015); // Adjust the animation speed here
+      mixer.update(0.005); // Adjust the animation speed here
       requestAnimationFrame(animate);
     };
 

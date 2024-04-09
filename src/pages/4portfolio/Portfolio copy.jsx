@@ -13,18 +13,18 @@ const Portfolio = () => {
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 0, -6), scene);
 
     camera.rotation.x = 0;
-    camera.rotation.y = 1.75;
+    camera.rotation.y = 1.7;
     camera.rotation.z = 0;
 
-    camera.position.z = 0.9;
-    camera.position.x = -1.9;
+    camera.position.z = 0.5;
+    camera.position.x = -1.2;
     camera.position.y = 0;
 
     camera.attachControl(canvas, true);
 
     const imagePlanes = [];
     const numImages = 6;
-    const shapeRadius = 3.1;
+    const shapeRadius = 3;
 
     const createImagePlane = (imageUrl, angle) => {
       const plane = BABYLON.MeshBuilder.CreatePlane("imagePlane", { width: 6, height: 3 }, scene);
@@ -67,15 +67,15 @@ const Portfolio = () => {
     `;
 
     // Create the post-process
-    const postProcess = new BABYLON.PostProcess("Squeeze", "squeeze", [], ["textureSampler"], 5.2, camera);
+    const postProcess = new BABYLON.PostProcess("Squeeze", "squeeze", [], ["textureSampler"], 1.0, camera);
 
     // Smooth scrolling variables
     let targetScrollPosition = 0;
     let currentScrollPosition = 0;
-    const scrollSmoothingFactor = 0.05;
+    const scrollSmoothingFactor = 0.1;
 
     window.addEventListener("wheel", function (e) {
-      targetScrollPosition += e.deltaY * 0.001;
+      targetScrollPosition += e.deltaY * 0.002;
     });
 
     const animate = () => {

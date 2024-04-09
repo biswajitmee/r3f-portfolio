@@ -1,0 +1,28 @@
+{
+  "sheetsById": {
+    "R3F UI": {
+      "staticOverrides": {
+        "byObject": {
+          "Editor Camera snapshot #1": {
+            "transform": {
+              "position": {
+                "x": 77.81365022019546,
+                "y": 77.81365022019554,
+                "z": 4.764711883606705e-15
+              },
+              "target": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitionVersion": "0.4.0",
+  "revisionHistory": [
+    "PkaObUSKV9TueoI4"
+  ]
+}

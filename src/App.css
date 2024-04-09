@@ -551,6 +551,10 @@ video {
   display: none;
 }
 
+.resize {
+  resize: both;
+}
+
 .flex-col {
   flex-direction: column;
 }

@@ -7,6 +7,7 @@ import '@babylonjs/loaders';
 import HomePage from '../1home/HomePage';
 import AboutMe from '../2about/AboutMe';
 import MyJourney from '../3journey/MyJourney';
+import Portfolio from '../4portfolio/Portfolio';
 
 function BabylonScene() {
   const canvasRef = useRef(null);
@@ -121,7 +122,8 @@ function Navigation() {
               <li className="my-4 text-7xl menu-item" onMouseEnter={() => handleMenuHover(new Vector3(0, 0, 0))}><Link to="/home" onClick={toggleMenu}>Home</Link></li>
               <li className="my-4 text-7xl menu-item" onMouseEnter={() => handleMenuHover(new Vector3(0, 0, 0))}><Link to="/about" onClick={toggleMenu}>About</Link></li>
               <li className="my-4 text-7xl menu-item" onMouseEnter={() => handleMenuHover(new Vector3(0, 0, 0))}><Link to="/journey" onClick={toggleMenu}>Journey</Link></li>
-              <li className="my-4 text-7xl menu-item">Portfolio</li>
+              <li className="my-4 text-7xl menu-item" onMouseEnter={() => handleMenuHover(new Vector3(0, 0, 0))}><Link to="/portfolio" onClick={toggleMenu}>Portfolio</Link></li>
+    
               <li className="my-4 text-7xl menu-item">Contact me</li>
             </ul> 
             
@@ -131,6 +133,7 @@ function Navigation() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/journey" element={<MyJourney />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </div>
     </Router>
