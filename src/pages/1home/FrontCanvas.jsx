@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Gltf, ScrollControls, useScroll, Scroll, Text, Plane, GradientTexture } from "@react-three/drei";
+import { Gltf, ScrollControls, useScroll, Scroll, Text, Plane, GradientTexture, Float } from "@react-three/drei";
 import { getProject, val } from "@theatre/core";
 import theatreState from "./theatreState.json";
 import GradientText from "./GradientText";
@@ -24,6 +24,7 @@ import { Rectangle } from "./Rectangle";
 import { GlassShape } from "./glassShape";
 import { CutTbe } from "./CutTbe";
 import { Dimond } from "./Dimond";
+import { Sharpnel } from "./Sharpnel";
 
 
 
@@ -95,9 +96,9 @@ function Scene() {
   return (
     <>
       <color attach="background" args={[bgColor]} />
-      {/* <e.pointLight theatreKey="LightBlue" position={[0, 0, 1]} />
+      <e.pointLight theatreKey="LightBlue" position={[0, 0, 1]} />
       <e.pointLight theatreKey="LightPurple" position={[0, 0, -2]} />
-      <e.pointLight theatreKey="LightWhite" position={[-1, 0, -1]} /> */}
+      <e.pointLight theatreKey="LightWhite" position={[-1, 0, -1]} />
 
 
       {/* <e.mesh theatreKey="QuantamCube" position={[0, 0, -1]}>
@@ -165,7 +166,12 @@ function Scene() {
       </e.mesh>
 
 
-
+      <e.mesh theatreKey="Sharpnel" position={[0, 0, -1]}> 
+      <Float>
+      <Sharpnel />
+       </Float>
+     
+      </e.mesh>
 
 
 
