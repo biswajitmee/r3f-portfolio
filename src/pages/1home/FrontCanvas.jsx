@@ -11,10 +11,10 @@ import {
   useCurrentSheet,
 } from "@theatre/r3f";
 
-// import studio from "@theatre/studio";
-// import extension from "@theatre/r3f/dist/extension";
-// studio.initialize();
-// studio.extend(extension);
+import studio from "@theatre/studio";
+import extension from "@theatre/r3f/dist/extension";
+studio.initialize();
+studio.extend(extension);
 
 import BreakCode from "./BreakCode";
 import { QuantamCube } from './QuantamCube';
@@ -25,6 +25,9 @@ import { GlassShape } from "./glassShape";
 import { CutTbe } from "./CutTbe";
 import { Dimond } from "./Dimond";
 import { Sharpnel } from "./Sharpnel";
+import ShaderToy from "./ShaderToy";
+import { SimpleRectengle } from "./SimpleRectengle";
+ 
 
 
 
@@ -96,27 +99,14 @@ function Scene() {
   return (
     <>
       <color attach="background" args={[bgColor]} />
-      <e.pointLight theatreKey="LightBlue" position={[0, 0, 1]} />
-      <e.pointLight theatreKey="LightPurple" position={[0, 0, -2]} />
-      <e.pointLight theatreKey="LightWhite" position={[-1, 0, -1]} />
+      {/* <e.pointLight theatreKey="Blue_light" position={[0, 0, 1]} />
+      <e.pointLight theatreKey="Purple_light" position={[0, 0, -2]} />
+      <e.pointLight theatreKey="Red_light" position={[-1, 0, -1]} /> */}
 
+ 
 
-      {/* <e.mesh theatreKey="QuantamCube" position={[0, 0, -1]}>
-                <QuantamCube />
-      </e.mesh> */}
-      {/* <e.mesh theatreKey="CutRound2" position={[0, 0, -1]}>
-                <CutRound2 />
-      </e.mesh> */}
-      {/* <e.mesh theatreKey="CutTbe" position={[0, 0, -1]} >
-                <CutTbe />
-      </e.mesh> */}
-
-      <e.mesh theatreKey="Design" position={[0, 0, -1]} >
-        <GradientText {...designFont} >Design</GradientText>
-      </e.mesh>
-
-      <e.mesh theatreKey="make" position={[0, 0, -1]}>
-        <Text  {...makeFont}  >that make difference..</Text>
+      <e.mesh theatreKey="SimpleRectengleBack" position={[0, 0, -1]} >
+         <SimpleRectengle />
       </e.mesh>
 
       <e.mesh theatreKey="plane" position={[0, 0, -1]}>
@@ -131,47 +121,57 @@ function Scene() {
         </mesh>
       </e.mesh>
 
-    
 
-      <e.mesh theatreKey="Deployment" position={[0, 0, -1]}>
-        <Text  {...deploymentFont}  >Deployment</Text>
+      <e.mesh theatreKey="Design" position={[0, 0, -1]} >
+        <GradientText {...designFont} >Design</GradientText>
       </e.mesh>
 
+      <e.mesh theatreKey="DesignTag" position={[0, 0, -1]}>
+        <Text  {...makeFont}  >that make difference..</Text>
+      </e.mesh>
+   
       <e.mesh theatreKey="flower" position={[0, 0, -1]} >
         <SimpleFlower />
       </e.mesh>
 
-      <e.mesh theatreKey="rectengale" position={[0, 0, -1]} >
-        <Rectangle />
-      </e.mesh>
-
-      {/* <e.mesh theatreKey="GlassShape"  position={[0, 0, -1]} >
-      <GlassShape />
-      </e.mesh> */}
+ 
+ 
 
 
 
-
-      <e.mesh theatreKey="Dimond" position={[0, 0, -1]} >
-        <Dimond />
-      </e.mesh>
+ 
 
       <e.mesh theatreKey="Development" position={[0, 0, -1]}>
         <Text  {...developFont}  >Development</Text>
       </e.mesh>
 
-
-      <e.mesh theatreKey="attractive" position={[0, 0, -1]}>
+      <e.mesh theatreKey="DevelopmentTag" position={[0, 0, -1]}>
         <Text  {...makeFont}  >that make attractive..</Text>
       </e.mesh>
 
-
-      <e.mesh theatreKey="Sharpnel" position={[0, 0, -1]}> 
-      <Float>
+      <e.mesh theatreKey="SharpnelRound" position={[0, 0, -1]}> 
+      <Float
+       floatIntensity={1}
+       floatingRange={[1, 1]}
+       rotationIntensity={5}
+       >
       <Sharpnel />
-       </Float>
-     
+       </Float>     
       </e.mesh>
+   
+      <e.mesh theatreKey="Develop_plane" position={[0, 0, -1]}>
+        <mesh>
+          <planeGeometry args={[20, 15]} />
+          <meshBasicMaterial>
+            <GradientTexture
+              stops={[0, 1]}
+              colors={['#0C00AB', '#3B006A']}
+              size={1024} />
+          </meshBasicMaterial>
+        </mesh>
+      </e.mesh>
+       
+      
 
 
 
@@ -179,10 +179,9 @@ function Scene() {
 
 
 
-
-
-
-
+      <e.mesh theatreKey="Deployment" position={[0, 0, -1]}>
+        <Text  {...deploymentFont}  >Deployment</Text>
+      </e.mesh>
 
 
       <PerspectiveCamera

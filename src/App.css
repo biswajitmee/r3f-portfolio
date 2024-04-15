@@ -564,6 +564,10 @@ video {
   line-height: 1;
 }
 
+.outline {
+  outline-style: solid;
+}
+
 .menuIcon {
   position: absolute;
   width: 50px;
